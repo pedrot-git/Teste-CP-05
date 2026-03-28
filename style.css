@@ -283,6 +283,107 @@ img {
   transform: translateY(-1px);
 }
 
+.site-footer {
+  position: relative;
+}
+
+.footer-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.1), transparent 24%),
+    linear-gradient(180deg, rgba(11, 16, 31, 0.96), rgba(7, 10, 22, 0.94));
+  box-shadow:
+    0 28px 80px rgba(5, 8, 22, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+}
+
+.footer-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(34, 211, 238, 0.14));
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.footer-highlight,
+.footer-card,
+.footer-bottom-pill {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.footer-card {
+  min-height: 100%;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.footer-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 20px 44px rgba(5, 8, 22, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.footer-title {
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.footer-info-link,
+.footer-info-line {
+  align-items: center;
+  color: rgba(226, 232, 240, 0.84);
+  display: inline-flex;
+  gap: 0.7rem;
+}
+
+.footer-nav-link {
+  display: inline-flex;
+}
+
+.footer-social-link {
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(236, 72, 153, 0.08)),
+    rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom-pill {
+  align-items: center;
+  border-radius: 999px;
+  color: rgba(226, 232, 240, 0.84);
+  display: inline-flex;
+  padding: 0.6rem 0.9rem;
+}
+
+.footer-bottom-link {
+  color: rgba(191, 219, 254, 0.84);
+}
+
 .nav-ghost-link {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
@@ -1697,6 +1798,15 @@ img {
 @media (max-width: 767px) {
   .grid-overlay {
     background-size: 46px 46px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+
+  .footer-bottom-pill {
+    width: 100%;
+    justify-content: center;
   }
 
   .benefit-card-top,

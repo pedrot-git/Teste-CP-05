@@ -955,52 +955,91 @@
       </section>
     </main>
 
-    <footer class="border-t border-white/10 pb-10 pt-8">
-      <div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div>
-          <div class="flex items-center gap-3">
-            <span class="logo-mark flex h-11 w-11 items-center justify-center rounded-2xl">
-              <i class="fa-solid fa-wave-square text-base"></i>
-            </span>
-            <span class="font-display text-xl font-bold">Melodia</span>
-          </div>
-          <p class="mt-4 max-w-md text-sm leading-7 text-slate-400">
-            Uma nova forma de descobrir, sentir e viver música com qualidade premium e interface imersiva.
-          </p>
-        </div>
+    <footer class="site-footer pb-8 pt-10 sm:pb-10 sm:pt-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="footer-shell rounded-[34px] p-6 sm:p-8 lg:p-10">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div class="footer-brand-zone">
+              <div class="flex items-center gap-4">
+                <span class="logo-mark flex h-12 w-12 items-center justify-center rounded-2xl">
+                  <i class="fa-solid fa-wave-square text-base"></i>
+                </span>
+                <div>
+                  <p class="font-display text-2xl font-bold text-white">Melodia</p>
+                  <p class="mt-1 text-sm uppercase tracking-[0.24em] text-cyan-200/70">Premium Music Experience</p>
+                </div>
+              </div>
 
-        <div class="grid gap-8 text-sm text-slate-400 sm:grid-cols-3">
-          <div>
-            <p class="font-semibold uppercase tracking-[0.2em] text-slate-200">Contato</p>
-            <p class="mt-3">hello@melodia.app</p>
-            <p class="mt-2">+55 11 99999-2026</p>
-          </div>
-          <div>
-            <p class="font-semibold uppercase tracking-[0.2em] text-slate-200">Links úteis</p>
-            <a href="#beneficios" class="footer-link mt-3 block">Benefícios</a>
-            <a href="#showcase" class="footer-link mt-2 block">Experiência</a>
-            <a href="#contato" class="footer-link mt-2 block">Acesso antecipado</a>
-          </div>
-          <div>
-            <p class="font-semibold uppercase tracking-[0.2em] text-slate-200">Redes</p>
-            <div class="mt-3 flex items-center gap-3">
-              <a href="#" class="social-link" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="#" class="social-link" aria-label="TikTok">
-                <i class="fa-brands fa-tiktok"></i>
-              </a>
-              <a href="#" class="social-link" aria-label="Spotify">
-                <i class="fa-brands fa-spotify"></i>
-              </a>
+              <p class="mt-6 max-w-xl text-base leading-8 text-slate-300">
+                Uma plataforma criada para transformar descoberta musical em experiência premium, com som refinado, curadoria inteligente e interface imersiva.
+              </p>
+
+              <div class="footer-highlight mt-8 rounded-[26px] p-5">
+                <p class="text-sm uppercase tracking-[0.24em] text-fuchsia-200/80">Always On Discovery</p>
+                <p class="mt-3 text-sm leading-7 text-slate-300">
+                  Do primeiro play ao último loop, o Melodia acompanha seu gosto com precisão, fluidez e identidade visual forte.
+                </p>
+              </div>
             </div>
-            <a href="#" class="footer-link mt-4 block">Política de Privacidade</a>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div class="footer-card rounded-[26px] p-5">
+                <p class="footer-title">Contato</p>
+                <div class="mt-4 space-y-3 text-sm text-slate-300">
+                  <a href="mailto:hello@melodia.app" class="footer-link footer-info-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    hello@melodia.app
+                  </a>
+                  <a href="tel:+5511999992026" class="footer-link footer-info-link">
+                    <i class="fa-solid fa-phone"></i>
+                    +55 11 99999-2026
+                  </a>
+                  <p class="footer-info-line">
+                    <i class="fa-solid fa-location-dot"></i>
+                    São Paulo, Brasil
+                  </p>
+                </div>
+              </div>
+
+              <div class="footer-card rounded-[26px] p-5">
+                <p class="footer-title">Links úteis</p>
+                <div class="mt-4 space-y-3 text-sm">
+                  <a href="#beneficios" class="footer-link footer-nav-link">Benefícios</a>
+                  <a href="#showcase" class="footer-link footer-nav-link">Experiência</a>
+                  <a href="#depoimentos" class="footer-link footer-nav-link">Depoimentos</a>
+                  <a href="#contato" class="footer-link footer-nav-link">Acesso antecipado</a>
+                </div>
+              </div>
+
+              <div class="footer-card rounded-[26px] p-5 sm:col-span-2 lg:col-span-1">
+                <p class="footer-title">Redes</p>
+                <div class="mt-4 flex items-center gap-3">
+                  <a href="#" class="social-link footer-social-link" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#" class="social-link footer-social-link" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                  <a href="#" class="social-link footer-social-link" aria-label="Spotify">
+                    <i class="fa-brands fa-spotify"></i>
+                  </a>
+                </div>
+                <a href="#" class="footer-link footer-nav-link mt-5 inline-flex items-center gap-2">
+                  Política de Privacidade
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[0.7rem]"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom mt-8 flex flex-col gap-4 border-t border-white/10 pt-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+            <p>© <span id="current-year">2026</span> Melodia. Todos os direitos reservados.</p>
+            <div class="flex flex-wrap items-center gap-4">
+              <span class="footer-bottom-pill">Feito para descoberta musical</span>
+              <a href="#inicio" class="footer-link footer-bottom-link">Voltar ao topo</a>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="mx-auto mt-8 max-w-7xl px-4 text-sm text-slate-500 sm:px-6 lg:px-8">
-        © <span id="current-year">2026</span> Melodia. Todos os direitos reservados.
       </div>
     </footer>
   </div>
