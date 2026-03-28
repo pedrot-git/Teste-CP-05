@@ -734,6 +734,16 @@ img {
   padding: 0.75rem;
 }
 
+.hero-mini-track > div,
+.track-item > div {
+  min-width: 0;
+}
+
+.hero-mini-track p,
+.track-item p {
+  overflow-wrap: anywhere;
+}
+
 .hero-phone {
   position: relative;
   z-index: 2;
@@ -1759,8 +1769,26 @@ img {
 }
 
 @media (max-width: 1023px) {
+  #inicio .relative.z-10 {
+    text-align: center;
+  }
+
+  .hero-title,
+  .hero-subtitle,
+  .hero-proof {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-row,
+  .hero-proof,
+  .hero-proof-users {
+    justify-content: center;
+  }
+
   .hero-mockup {
     min-height: 760px;
+    margin-top: 1rem;
   }
 
   .floating-panel {
@@ -1792,6 +1820,14 @@ img {
 
   .lead-form-row {
     align-items: stretch;
+  }
+
+  .lead-form-meta {
+    text-align: center;
+  }
+
+  .lead-trust {
+    justify-content: center;
   }
 }
 
@@ -1840,7 +1876,16 @@ img {
   }
 
   .lead-trust {
-    justify-content: flex-start;
+    justify-content: center;
+  }
+
+  .lead-form-meta {
+    text-align: center;
+  }
+
+  .showcase-score,
+  .pill-badge {
+    align-self: flex-start;
   }
 
   .hero-title {
