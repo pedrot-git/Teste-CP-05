@@ -876,7 +876,7 @@
       <section id="contato" class="pb-20 pt-20 sm:pb-24 sm:pt-24">
         <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div class="cta-panel overflow-hidden rounded-[36px] p-8 sm:p-10 lg:p-12">
-            <div class="mx-auto max-w-3xl text-center">
+            <div class="contact-panel-inner mx-auto max-w-4xl text-center">
               <p class="section-eyebrow reveal-up">Entre na lista</p>
               <h2 class="reveal-up mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
                 Receba acesso antecipado ao universo premium do Melodia.
@@ -884,25 +884,71 @@
               <p class="reveal-up mt-5 text-lg leading-8 text-slate-300">
                 Cadastre seu e-mail para liberar novidades, playlists exclusivas e convites para o beta.
               </p>
+
+              <div class="reveal-up mt-8 grid gap-4 sm:grid-cols-3">
+                <div class="contact-metric rounded-[24px] p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-cyan-200/80">Acesso</p>
+                  <p class="mt-2 text-2xl font-bold text-white">Early Beta</p>
+                </div>
+                <div class="contact-metric rounded-[24px] p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-fuchsia-200/80">Extras</p>
+                  <p class="mt-2 text-2xl font-bold text-white">Playlists exclusivas</p>
+                </div>
+                <div class="contact-metric rounded-[24px] p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-violet-200/80">Experiência</p>
+                  <p class="mt-2 text-2xl font-bold text-white">Sem spam</p>
+                </div>
+              </div>
             </div>
 
-            <form id="lead-form" class="reveal-up mx-auto mt-10 max-w-2xl">
-              <div class="flex flex-col gap-4 rounded-[30px] border border-white/10 bg-white/5 p-4 shadow-[0_20px_60px_rgba(7,10,24,0.45)] backdrop-blur-xl sm:flex-row">
-                <label for="email" class="sr-only">Seu e-mail</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Seu melhor e-mail"
-                  class="h-14 flex-1 rounded-2xl border border-white/10 bg-slate-950/70 px-5 text-base text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
-                >
-                <button type="submit" class="glow-button inline-flex h-14 items-center justify-center gap-3 rounded-2xl px-7 text-base font-semibold text-white">
-                  Quero Acesso
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
+            <form id="lead-form" class="reveal-up mx-auto mt-10 max-w-3xl">
+              <div class="lead-form-shell rounded-[32px] p-4 sm:p-5">
+                <div class="lead-form-row flex flex-col gap-4 lg:flex-row lg:items-center">
+                  <div class="lead-input-wrap flex-1 rounded-[26px] p-1.5">
+                    <div class="lead-input-inner flex items-center gap-4 rounded-[22px] px-4 py-3">
+                      <span class="lead-input-icon">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                      </span>
+                      <div class="min-w-0 flex-1 text-left">
+                        <label for="email" class="lead-label block text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
+                          Seu e-mail
+                        </label>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          placeholder="voce@exemplo.com"
+                          class="lead-input mt-2 h-8 w-full bg-transparent text-base text-white outline-none placeholder:text-slate-500"
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <button id="lead-submit" type="submit" class="glow-button lead-submit inline-flex h-16 items-center justify-center gap-3 rounded-[22px] px-7 text-base font-semibold text-white lg:min-w-[220px]">
+                    <span class="lead-submit-dot"></span>
+                    <span class="lead-submit-text">Quero Acesso</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+
+                <div class="lead-form-meta mt-4 flex flex-col gap-3 text-left sm:flex-row sm:items-center sm:justify-between">
+                  <p class="text-sm text-slate-400">
+                    Convites limitados, aviso antecipado de lançamento e curadorias especiais direto no seu inbox.
+                  </p>
+                  <div class="lead-trust inline-flex items-center gap-3 text-sm text-slate-300">
+                    <span class="lead-trust-pill">
+                      <i class="fa-solid fa-shield-heart"></i>
+                      Sem spam
+                    </span>
+                    <span class="lead-trust-pill">
+                      <i class="fa-solid fa-bolt"></i>
+                      Resposta rápida
+                    </span>
+                  </div>
+                </div>
               </div>
-              <p id="form-feedback" class="mt-4 min-h-6 text-sm font-medium text-cyan-200" aria-live="polite"></p>
+              <p id="form-feedback" class="lead-feedback mt-4 min-h-6 text-sm font-medium text-cyan-200" aria-live="polite"></p>
             </form>
           </div>
         </div>

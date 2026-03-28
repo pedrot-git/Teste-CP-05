@@ -4,6 +4,7 @@ const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
 const leadForm = document.getElementById("lead-form");
 const feedback = document.getElementById("form-feedback");
+const leadSubmit = document.getElementById("lead-submit");
 const currentYear = document.getElementById("current-year");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -94,23 +95,72 @@ if (menuToggle && mobileMenu) {
 }
 
 if (leadForm && feedback) {
+  const emailInput = leadForm.querySelector('input[type="email"]');
+  const inputWrap = leadForm.querySelector(".lead-input-wrap");
+  const submitText = leadSubmit ? leadSubmit.querySelector(".lead-submit-text") : null;
+  const defaultSubmitText = submitText ? submitText.textContent : "";
+
+  const setFeedbackState = (message, state) => {
+    feedback.textContent = message;
+    feedback.classList.remove("form-success", "form-error", "form-idle");
+    feedback.classList.add(state);
+  };
+
+  const resetInputState = () => {
+    if (inputWrap) {
+      inputWrap.classList.remove("is-invalid");
+    }
+  };
+
+  if (emailInput) {
+    emailInput.addEventListener("input", () => {
+      resetInputState();
+
+      if (feedback.textContent) {
+        setFeedbackState("", "form-idle");
+      }
+    });
+  }
+
   leadForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const emailInput = leadForm.querySelector('input[type="email"]');
     const emailValue = emailInput ? emailInput.value.trim() : "";
 
     if (!emailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-      feedback.textContent = "Digite um e-mail válido para entrar na lista.";
-      feedback.classList.remove("form-success");
-      feedback.classList.add("form-error");
+      if (inputWrap) {
+        inputWrap.classList.add("is-invalid");
+      }
+
+      setFeedbackState("Digite um e-mail válido para entrar na lista.", "form-error");
       return;
     }
 
-    feedback.textContent = "Acesso solicitado. Em breve você recebe as novidades do Melodia.";
-    feedback.classList.remove("form-error");
-    feedback.classList.add("form-success");
-    leadForm.reset();
+    resetInputState();
+    setFeedbackState("Analisando seu acesso antecipado...", "form-idle");
+
+    if (leadSubmit) {
+      leadSubmit.classList.add("is-loading");
+      leadSubmit.disabled = true;
+    }
+
+    if (submitText) {
+      submitText.textContent = "Confirmando";
+    }
+
+    window.setTimeout(() => {
+      setFeedbackState("Acesso solicitado. Em breve você recebe as novidades do Melodia.", "form-success");
+      leadForm.reset();
+
+      if (leadSubmit) {
+        leadSubmit.classList.remove("is-loading");
+        leadSubmit.disabled = false;
+      }
+
+      if (submitText) {
+        submitText.textContent = defaultSubmitText;
+      }
+    }, 700);
   });
 }
 
