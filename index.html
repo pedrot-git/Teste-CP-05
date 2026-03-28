@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Melodia é o app de música premium para descobrir artistas, ouvir com qualidade superior e viver playlists feitas para o seu momento."
+  >
+  <title>Melodia | Sua Música, Sua Forma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#050816] text-slate-100 antialiased selection:bg-fuchsia-500/40 selection:text-white">
+  <div class="page-shell">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-500">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="nav-glass nav-main mt-4 flex items-center justify-between rounded-[1.75rem] px-4 py-3 sm:px-5" aria-label="Principal">
+          <a href="#inicio" class="brand-lockup flex items-center gap-3 sm:gap-4">
+            <span class="logo-mark flex h-12 w-12 items-center justify-center rounded-2xl sm:h-14 sm:w-14">
+              <span class="logo-pulse"></span>
+              <i class="fa-solid fa-wave-square relative z-[1] text-base sm:text-lg"></i>
+            </span>
+            <span class="brand-copy">
+              <span class="flex items-center gap-2 sm:gap-3">
+                <span class="font-display text-lg font-bold tracking-tight text-white sm:text-[1.35rem]">Melodia</span>
+                <span class="brand-badge hidden sm:inline-flex">Premium Sound</span>
+              </span>
+              <span class="brand-subtitle hidden sm:block">Descoberta sonora elevada</span>
+            </span>
+          </a>
+
+          <div class="nav-links-shell hidden items-center gap-1 lg:flex">
+            <a href="#beneficios" class="nav-link"><span>Benefícios</span></a>
+            <a href="#funcionalidades" class="nav-link"><span>Funcionalidades</span></a>
+            <a href="#showcase" class="nav-link"><span>App</span></a>
+            <a href="#depoimentos" class="nav-link"><span>Depoimentos</span></a>
+            <a href="#contato" class="nav-link"><span>Contato</span></a>
+          </div>
+
+          <div class="hidden items-center gap-3 lg:flex">
+            <a href="#showcase" class="nav-ghost-link inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-slate-100">
+              Ver o app
+              <i class="fa-solid fa-circle-play text-xs"></i>
+            </a>
+            <a href="#contato" class="glow-button nav-cta inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm font-semibold text-white">
+              <span class="cta-dot"></span>
+              Ouvir Agora
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+
+          <button
+            id="menu-toggle"
+            class="mobile-toggle inline-flex h-12 w-12 items-center justify-center rounded-2xl lg:hidden"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Abrir menu"
+          >
+            <i class="fa-solid fa-bars text-base"></i>
+          </button>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true">
+          <div class="mobile-menu-inner mt-3 rounded-[2rem] p-4 sm:p-5">
+            <div class="mobile-menu-top flex items-center justify-between gap-4">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-200/75">Navegação</p>
+                <p class="mt-2 text-sm text-slate-300">Acesse as áreas principais da experiência Melodia.</p>
+              </div>
+              <span class="brand-badge">Beta Access</span>
+            </div>
+
+            <div class="mt-5 grid gap-2">
+              <a href="#beneficios" class="mobile-link">
+                <span class="mobile-link-icon"><i class="fa-solid fa-volume-high"></i></span>
+                <span>Benefícios</span>
+              </a>
+              <a href="#funcionalidades" class="mobile-link">
+                <span class="mobile-link-icon"><i class="fa-solid fa-sliders"></i></span>
+                <span>Funcionalidades</span>
+              </a>
+              <a href="#showcase" class="mobile-link">
+                <span class="mobile-link-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                <span>App</span>
+              </a>
+              <a href="#depoimentos" class="mobile-link">
+                <span class="mobile-link-icon"><i class="fa-solid fa-quote-left"></i></span>
+                <span>Depoimentos</span>
+              </a>
+              <a href="#contato" class="mobile-link">
+                <span class="mobile-link-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+                <span>Contato</span>
+              </a>
+            </div>
+
+            <div class="mt-4 flex flex-col gap-3">
+              <a href="#showcase" class="mobile-secondary-link inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white">
+                Ver a experiência
+                <i class="fa-solid fa-circle-play text-xs"></i>
+              </a>
+              <a href="#contato" class="glow-button inline-flex items-center justify-center gap-3 rounded-2xl px-5 py-3 text-sm font-semibold text-white">
+                <span class="cta-dot"></span>
+                Ouvir Agora
+                <i class="fa-solid fa-play text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero-section relative overflow-hidden pt-32 sm:pt-36">
+        <div class="hero-spotlight hero-spotlight-left parallax-node" data-speed="0.1"></div>
+        <div class="hero-spotlight hero-spotlight-right parallax-node" data-speed="-0.08"></div>
+
+        <div class="mx-auto grid max-w-7xl items-center gap-16 px-4 pb-20 pt-8 sm:px-6 lg:grid-cols-[1fr_1.02fr] lg:px-8 lg:pb-28">
+          <div class="relative z-10">
+            <div class="hero-chip hero-intro inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-cyan-100">
+              <span class="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.8)]"></span>
+              Discovery engine para quem vive música de verdade
+            </div>
+
+            <div class="hero-copy max-w-2xl">
+              <h1 class="hero-title hero-intro mt-6 font-display text-5xl font-bold leading-[0.92] tracking-[-0.05em] text-white sm:text-6xl lg:text-[5.4rem]">
+                Melodia:
+                <span class="gradient-text block">Sua Música, Sua Forma</span>
+              </h1>
+
+              <p class="hero-subtitle hero-intro mt-6 max-w-xl text-lg leading-8 text-slate-300 sm:text-xl">
+                Som premium, descobertas certeiras e uma experiência imersiva para transformar qualquer momento em sessão.
+              </p>
+            </div>
+
+            <div class="hero-cta-row hero-intro mt-8 flex flex-col gap-4 sm:flex-row">
+              <a href="#contato" class="glow-button inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 text-base font-semibold text-white">
+                Ouvir Agora
+                <i class="fa-solid fa-headphones-simple text-sm"></i>
+              </a>
+              <a href="#showcase" class="secondary-button inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 text-base font-semibold text-white">
+                Explorar o App
+                <i class="fa-solid fa-circle-play text-sm"></i>
+              </a>
+            </div>
+
+            <div class="hero-proof hero-intro mt-8 flex flex-wrap items-center gap-5 text-sm text-slate-300">
+              <div class="hero-proof-users flex items-center gap-3">
+                <div class="hero-avatar-stack" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <p><strong class="text-white">+120 mil</strong> pessoas na lista de acesso</p>
+              </div>
+              <div class="hero-proof-divider hidden h-6 w-px bg-white/10 sm:block"></div>
+              <p class="hero-proof-tag inline-flex items-center gap-2">
+                <i class="fa-solid fa-sparkles text-cyan-300"></i>
+                Curadoria em tempo real com assinatura premium
+              </p>
+            </div>
+
+            <div class="mt-10 grid gap-4 sm:grid-cols-3">
+              <div class="metric-card hero-metric-card rounded-[30px] p-5">
+                <p class="text-sm uppercase tracking-[0.24em] text-cyan-200/80">Qualidade</p>
+                <p class="mt-3 text-3xl font-extrabold tracking-tight text-white">24bit</p>
+                <p class="mt-2 text-sm text-slate-300">Áudio com profundidade e presença cinematográfica.</p>
+              </div>
+              <div class="metric-card hero-metric-card rounded-[30px] p-5">
+                <p class="text-sm uppercase tracking-[0.24em] text-fuchsia-200/80">Catálogo</p>
+                <p class="mt-3 text-3xl font-extrabold tracking-tight text-white">+8M</p>
+                <p class="mt-2 text-sm text-slate-300">Novas atmosferas, gêneros e artistas para descobrir.</p>
+              </div>
+              <div class="metric-card hero-metric-card rounded-[30px] p-5">
+                <p class="text-sm uppercase tracking-[0.24em] text-violet-200/80">Personalização</p>
+                <p class="mt-3 text-3xl font-extrabold tracking-tight text-white">AI Mix</p>
+                <p class="mt-2 text-sm text-slate-300">Playlists adaptadas ao seu ritmo, humor e contexto.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="hero-mockup hero-visual-main reveal-scale relative mx-auto max-w-[690px]">
+              <div class="hero-ring hero-ring-one parallax-node" data-speed="0.12"></div>
+              <div class="hero-ring hero-ring-two parallax-node" data-speed="-0.1"></div>
+              <div class="hero-decor-line hero-decor-line-left"></div>
+              <div class="hero-decor-line hero-decor-line-right"></div>
+              <div class="hero-orb hero-orb-left parallax-node" data-speed="0.15"></div>
+              <div class="hero-orb hero-orb-right parallax-node" data-speed="-0.08"></div>
+
+              <div class="hero-dashboard hero-float reveal-scale rounded-[34px] p-5 sm:p-6">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-cyan-200/70">Sessão imersiva</p>
+                    <h2 class="mt-2 font-display text-2xl font-bold text-white sm:text-[2rem]">Pulse Session</h2>
+                  </div>
+                  <div class="hero-dashboard-pill">
+                    <span class="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                    Lossless ativo
+                  </div>
+                </div>
+
+                <div class="mt-6 grid gap-5 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+                  <div class="hero-side-card rounded-[28px] p-5">
+                    <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Radar Melodia</p>
+                    <div class="playlist-wave mt-6">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="mt-6 space-y-3">
+                      <div class="hero-mini-track">
+                        <span class="mini-cover mini-cover-cyan"></span>
+                        <div>
+                          <p class="text-sm font-semibold text-white">Neon Skyline</p>
+                          <p class="text-xs text-slate-400">Indie eletrônico</p>
+                        </div>
+                      </div>
+                      <div class="hero-mini-track">
+                        <span class="mini-cover mini-cover-pink"></span>
+                        <div>
+                          <p class="text-sm font-semibold text-white">Velvet Heat</p>
+                          <p class="text-xs text-slate-400">Alt R&amp;B</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="phone-shell hero-phone mx-auto w-full max-w-[360px] rounded-[38px] p-4 shadow-2xl">
+                    <div class="phone-screen overflow-hidden rounded-[30px] p-5">
+                      <div class="flex items-start justify-between">
+                        <div>
+                          <p class="text-sm uppercase tracking-[0.32em] text-cyan-200/70">Em destaque</p>
+                          <h3 class="mt-2 font-display text-2xl font-bold text-white">Pulse Session</h3>
+                        </div>
+                        <button class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white" type="button" aria-label="Curtir faixa">
+                          <i class="fa-solid fa-heart"></i>
+                        </button>
+                      </div>
+
+                      <div class="album-art mt-6 rounded-[30px] p-6">
+                        <div class="album-disc mx-auto flex h-48 w-48 items-center justify-center rounded-full">
+                          <div class="album-center h-20 w-20 rounded-full"></div>
+                        </div>
+                      </div>
+
+                      <div class="mt-6">
+                        <div class="flex items-center justify-between">
+                          <div>
+                            <p class="text-xl font-bold text-white">Sapphire Echoes</p>
+                            <p class="text-sm text-slate-300">Luna Vega</p>
+                          </div>
+                          <div class="flex items-center gap-2 text-xs text-slate-300">
+                            <span class="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                            3D Audio
+                          </div>
+                        </div>
+
+                        <div class="mt-5 space-y-2">
+                          <div class="progress-rail h-2 w-full overflow-hidden rounded-full">
+                            <div class="progress-fill h-full rounded-full"></div>
+                          </div>
+                          <div class="flex justify-between text-xs text-slate-400">
+                            <span>01:24</span>
+                            <span>03:58</span>
+                          </div>
+                        </div>
+
+                        <div class="mt-5 flex items-center justify-between">
+                          <button class="icon-button" type="button" aria-label="Aleatório">
+                            <i class="fa-solid fa-shuffle"></i>
+                          </button>
+                          <button class="icon-button" type="button" aria-label="Faixa anterior">
+                            <i class="fa-solid fa-backward-step"></i>
+                          </button>
+                          <button class="play-button" type="button" aria-label="Tocar">
+                            <i class="fa-solid fa-play"></i>
+                          </button>
+                          <button class="icon-button" type="button" aria-label="Próxima faixa">
+                            <i class="fa-solid fa-forward-step"></i>
+                          </button>
+                          <button class="icon-button" type="button" aria-label="Repetir">
+                            <i class="fa-solid fa-repeat"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="floating-panel hero-float floating-panel-top rounded-[28px] p-4">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-fuchsia-500/20 text-fuchsia-200">
+                    <i class="fa-solid fa-sparkles"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-white">Descoberta da semana</p>
+                    <p class="text-xs text-slate-300">Aurora Motel • dream synth</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="floating-panel hero-float floating-panel-bottom rounded-[28px] p-4">
+                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Agora bombando</p>
+                <div class="mt-3 space-y-3">
+                  <div class="flex items-center justify-between rounded-2xl bg-white/5 px-3 py-2">
+                    <div class="flex items-center gap-3">
+                      <span class="mini-cover mini-cover-pink"></span>
+                      <div>
+                        <p class="text-sm font-semibold text-white">Night Drive</p>
+                        <p class="text-xs text-slate-400">Electro pop</p>
+                      </div>
+                    </div>
+                    <span class="text-xs text-cyan-200">+32%</span>
+                  </div>
+                  <div class="flex items-center justify-between rounded-2xl bg-white/5 px-3 py-2">
+                    <div class="flex items-center gap-3">
+                      <span class="mini-cover mini-cover-cyan"></span>
+                      <div>
+                        <p class="text-sm font-semibold text-white">After Eden</p>
+                        <p class="text-xs text-slate-400">Future soul</p>
+                      </div>
+                    </div>
+                    <span class="text-xs text-fuchsia-200">Novo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-stat-card hero-float rounded-[26px] p-4">
+                <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Recomendação</p>
+                <p class="mt-2 text-2xl font-bold text-white">92% match</p>
+                <p class="mt-2 text-sm leading-6 text-slate-300">Curadoria dinâmica baseada no seu contexto em tempo real.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative pb-8">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="brand-strip rounded-[32px] px-6 py-5">
+            <div class="grid gap-5 text-center text-sm font-semibold uppercase tracking-[0.24em] text-slate-300/70 sm:grid-cols-2 lg:grid-cols-4">
+              <span>Spatial Audio</span>
+              <span>Curadoria AI</span>
+              <span>Mixes Instantâneos</span>
+              <span>Descoberta Global</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="beneficios" class="py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
+            <div class="benefit-intro-panel reveal-up rounded-[34px] p-8 sm:p-10">
+              <p class="section-eyebrow">Benefícios</p>
+              <h2 class="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Tudo o que faz o Melodia soar, parecer e recomendar melhor.
+              </h2>
+              <p class="mt-5 text-lg leading-8 text-slate-300">
+                A experiência foi desenhada para unir qualidade sonora, inteligência musical e uma interface que parece premium em cada toque.
+              </p>
+
+              <div class="benefit-intro-highlight mt-8 rounded-[28px] p-5">
+                <p class="text-sm uppercase tracking-[0.24em] text-cyan-200/80">Para quem quer mais que play</p>
+                <p class="mt-3 text-base leading-7 text-slate-200">
+                  Descubra faixas com mais precisão, mantenha o clima certo por mais tempo e navegue com fluidez total entre playlists, artistas e sessões.
+                </p>
+              </div>
+            </div>
+
+            <div class="benefits-grid grid gap-6 md:grid-cols-2">
+              <article class="feature-card benefit-card benefit-cyan rounded-[30px] p-7">
+                <div class="benefit-card-top">
+                  <div class="feature-icon benefit-icon">
+                    <i class="fa-solid fa-volume-high"></i>
+                  </div>
+                  <span class="benefit-tag">Hi-Fi Impact</span>
+                </div>
+                <h3 class="mt-6 text-2xl font-bold text-white">Qualidade de som superior</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Graves definidos, agudos limpos e uma profundidade sonora que coloca cada detalhe da faixa no primeiro plano.
+                </p>
+                <div class="benefit-card-footer mt-6">
+                  <span class="benefit-line"></span>
+                  <span class="benefit-meta">Imersão com presença real</span>
+                </div>
+              </article>
+
+              <article class="feature-card benefit-card benefit-pink rounded-[30px] p-7">
+                <div class="benefit-card-top">
+                  <div class="feature-icon benefit-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  </div>
+                  <span class="benefit-tag">Mood Driven</span>
+                </div>
+                <h3 class="mt-6 text-2xl font-bold text-white">Playlists personalizadas</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Mixes que entendem energia, momento e repetição para montar a trilha certa sem esforço e sem parecer automática.
+                </p>
+                <div class="benefit-card-footer mt-6">
+                  <span class="benefit-line"></span>
+                  <span class="benefit-meta">Curadoria viva para cada vibe</span>
+                </div>
+              </article>
+
+              <article class="feature-card benefit-card benefit-violet rounded-[30px] p-7">
+                <div class="benefit-card-top">
+                  <div class="feature-icon benefit-icon">
+                    <i class="fa-solid fa-compact-disc"></i>
+                  </div>
+                  <span class="benefit-tag">New Voices</span>
+                </div>
+                <h3 class="mt-6 text-2xl font-bold text-white">Descoberta de novos artistas</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Um radar editorial e inteligente revela nomes emergentes antes da curva, ampliando seu repertório com mais personalidade.
+                </p>
+                <div class="benefit-card-footer mt-6">
+                  <span class="benefit-line"></span>
+                  <span class="benefit-meta">Exploração com assinatura própria</span>
+                </div>
+              </article>
+
+              <article class="feature-card benefit-card benefit-blue rounded-[30px] p-7">
+                <div class="benefit-card-top">
+                  <div class="feature-icon benefit-icon">
+                    <i class="fa-solid fa-sliders"></i>
+                  </div>
+                  <span class="benefit-tag">Smooth UX</span>
+                </div>
+                <h3 class="mt-6 text-2xl font-bold text-white">Interface intuitiva</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Controles fluidos, leitura clara e navegação sem ruído para deixar a música no centro da experiência o tempo inteiro.
+                </p>
+                <div class="benefit-card-footer mt-6">
+                  <span class="benefit-line"></span>
+                  <span class="benefit-meta">Tecnologia que desaparece no uso</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="funcionalidades" class="py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div class="surface-panel reveal-up rounded-[34px] p-8 sm:p-10">
+              <p class="section-eyebrow">Funcionalidades</p>
+              <h2 class="mt-4 font-display text-4xl font-bold tracking-tight text-white">
+                O app acompanha sua rotina sem perder personalidade.
+              </h2>
+              <p class="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+                A plataforma combina curadoria humana, aprendizado de gosto e uma camada visual digna de um produto premium.
+              </p>
+
+              <div class="mt-8 space-y-4">
+                <div class="feature-line rounded-3xl p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200/80">Flow Mode</p>
+                  <p class="mt-2 text-slate-200">Transições inteligentes entre faixas para manter a energia da sessão.</p>
+                </div>
+                <div class="feature-line rounded-3xl p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.22em] text-fuchsia-200/80">Mood Scan</p>
+                  <p class="mt-2 text-slate-200">Recomendações baseadas no horário, intensidade e histórico do usuário.</p>
+                </div>
+                <div class="feature-line rounded-3xl p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.22em] text-violet-200/80">Offline Smart Cache</p>
+                  <p class="mt-2 text-slate-200">Baixe automaticamente o que você mais ouve para nunca interromper o clima.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2">
+              <article class="product-card reveal-up rounded-[30px] p-7 md:col-span-2">
+                <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                  <div class="max-w-lg">
+                    <p class="section-eyebrow">Recomendação em tempo real</p>
+                    <h3 class="mt-3 text-2xl font-bold text-white">Mixes que evoluem enquanto você escuta</h3>
+                    <p class="mt-3 leading-7 text-slate-300">
+                      O algoritmo entende skips, repetição e contexto para refinar a próxima faixa sem parecer mecânico.
+                    </p>
+                  </div>
+                  <div class="equalizer-card">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card reveal-up rounded-[30px] p-7">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-white">Atalhos fluidos</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Ações rápidas para salvar, curtir e entrar em rádios sem sair da faixa atual.
+                </p>
+              </article>
+
+              <article class="product-card reveal-up rounded-[30px] p-7">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-users-line"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-white">Sessões compartilhadas</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Crie filas colaborativas para festas, treinos ou viagens com atualização em tempo real.
+                </p>
+              </article>
+
+              <article class="product-card reveal-up rounded-[30px] p-7">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-white">Insights do seu gosto</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Veja os gêneros, artistas e atmosferas que mais definem sua identidade sonora.
+                </p>
+              </article>
+
+              <article class="product-card reveal-up rounded-[30px] p-7">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-radio"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-white">Rádios vivas</h3>
+                <p class="mt-3 leading-7 text-slate-300">
+                  Entre em estações temáticas que se renovam com lançamentos e descobertas editoriais.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="showcase" class="py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="showcase-panel overflow-hidden rounded-[36px] p-8 sm:p-10 lg:p-12">
+            <div class="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+              <div>
+                <p class="section-eyebrow reveal-up">Showcase visual</p>
+                <h2 class="reveal-up mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                  Uma vitrine do app em ação, com camadas, ritmo e presença de produto real.
+                </h2>
+                <p class="reveal-up mt-5 max-w-xl text-lg leading-8 text-slate-300">
+                  O Melodia aparece aqui como experiência completa: player premium, radar de gosto, descoberta editorial e sinais visuais que fazem a interface parecer pronta para lançamento.
+                </p>
+
+                <div class="reveal-up mt-8 grid gap-4 sm:grid-cols-2">
+                  <div class="showcase-stat rounded-3xl p-5">
+                    <p class="text-sm uppercase tracking-[0.24em] text-cyan-200/80">Descobertas</p>
+                    <p class="mt-3 text-3xl font-bold text-white">1.240 novas faixas</p>
+                    <p class="mt-2 text-sm text-slate-300">Sugeridas com base em padrões reais de escuta.</p>
+                  </div>
+                  <div class="showcase-stat rounded-3xl p-5">
+                    <p class="text-sm uppercase tracking-[0.24em] text-fuchsia-200/80">Engajamento</p>
+                    <p class="mt-3 text-3xl font-bold text-white">92% mais tempo ouvindo</p>
+                    <p class="mt-2 text-sm text-slate-300">Mais sessões completas e menos abandono.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="showcase-stage reveal-scale relative">
+                <div class="showcase-aura showcase-aura-cyan parallax-node" data-speed="0.08"></div>
+                <div class="showcase-aura showcase-aura-pink parallax-node" data-speed="-0.06"></div>
+
+                <div class="showcase-grid grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
+                  <article class="showcase-card showcase-main-card rounded-[32px] p-6 md:p-7 lg:row-span-2">
+                    <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+                      <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-slate-400">Control Hub</p>
+                        <h3 class="mt-2 text-2xl font-bold text-white sm:text-[2rem]">Afterglow City</h3>
+                        <p class="mt-3 max-w-lg text-sm leading-7 text-slate-300">
+                          Uma composição de player, descoberta e recomendação em tempo real para mostrar o Melodia como produto premium de verdade.
+                        </p>
+                      </div>
+                      <span class="pill-badge">Curadoria AI</span>
+                    </div>
+
+                    <div class="mt-7 grid gap-5 xl:grid-cols-[0.94fr_1.06fr] xl:items-center">
+                      <div class="showcase-player-shell rounded-[28px] p-5">
+                        <div class="showcase-mini-header flex items-center justify-between">
+                          <p class="text-xs uppercase tracking-[0.28em] text-cyan-200/70">Tocando agora</p>
+                          <span class="showcase-live-dot"></span>
+                        </div>
+                        <div class="showcase-disc-wrap mt-5">
+                          <div class="showcase-disc"></div>
+                        </div>
+                        <div class="mt-5">
+                          <p class="text-lg font-bold text-white">Midnight Riviera</p>
+                          <p class="text-sm text-slate-400">Nova Bloom</p>
+                        </div>
+                        <div class="mt-5 space-y-2">
+                          <div class="progress-rail h-2 w-full overflow-hidden rounded-full">
+                            <div class="progress-fill showcase-progress-fill h-full rounded-full"></div>
+                          </div>
+                          <div class="flex justify-between text-xs text-slate-400">
+                            <span>01:42</span>
+                            <span>04:08</span>
+                          </div>
+                        </div>
+                        <div class="mt-5 flex items-center justify-between">
+                          <button class="icon-button" type="button" aria-label="Curtir faixa no showcase">
+                            <i class="fa-solid fa-heart"></i>
+                          </button>
+                          <button class="showcase-play-button" type="button" aria-label="Tocar showcase">
+                            <i class="fa-solid fa-play"></i>
+                          </button>
+                          <button class="icon-button" type="button" aria-label="Salvar faixa no showcase">
+                            <i class="fa-solid fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="space-y-4">
+                        <div class="showcase-focus-card rounded-[26px] p-5">
+                          <div class="flex items-start justify-between gap-4">
+                            <div>
+                              <p class="text-xs uppercase tracking-[0.28em] text-slate-400">Playlist em destaque</p>
+                              <p class="mt-2 text-xl font-bold text-white">Neon Escape</p>
+                            </div>
+                            <span class="showcase-score">94% fit</span>
+                          </div>
+                          <div class="playlist-wave mt-6 showcase-wave">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                          <div class="mt-6 space-y-3">
+                            <div class="track-item showcase-track-item">
+                              <div class="flex items-center gap-4">
+                                <span class="track-cover track-cover-blue"></span>
+                                <div>
+                                  <p class="font-semibold text-white">Velvet Hours</p>
+                                  <p class="text-sm text-slate-400">Cosmo Youth</p>
+                                </div>
+                              </div>
+                              <span class="text-sm text-slate-400">4:12</span>
+                            </div>
+                            <div class="track-item showcase-track-item">
+                              <div class="flex items-center gap-4">
+                                <span class="track-cover track-cover-pink"></span>
+                                <div>
+                                  <p class="font-semibold text-white">Solar Hearts</p>
+                                  <p class="text-sm text-slate-400">Astra Lane</p>
+                                </div>
+                              </div>
+                              <span class="text-sm text-slate-400">2:58</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="showcase-inline-stats grid gap-4 sm:grid-cols-2">
+                          <div class="showcase-metric-card rounded-[24px] p-5">
+                            <p class="text-xs uppercase tracking-[0.28em] text-cyan-200/75">Tempo de sessão</p>
+                            <p class="mt-3 text-3xl font-bold text-white">+47 min</p>
+                            <p class="mt-2 text-sm text-slate-300">Mais permanência quando a recomendação acerta o clima.</p>
+                          </div>
+                          <div class="showcase-metric-card rounded-[24px] p-5">
+                            <p class="text-xs uppercase tracking-[0.28em] text-fuchsia-200/75">Novos favoritos</p>
+                            <p class="mt-3 text-3xl font-bold text-white">18 por semana</p>
+                            <p class="mt-2 text-sm text-slate-300">Descobertas frequentes com perfil musical consistente.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="showcase-card showcase-card-compact rounded-[30px] p-6">
+                    <div class="flex items-center justify-between gap-3">
+                      <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-slate-400">Radar do usuário</p>
+                        <p class="mt-2 text-lg font-bold text-white">Seu gosto em tempo real</p>
+                      </div>
+                      <span class="pill-badge">Live</span>
+                    </div>
+
+                    <div class="mt-5 space-y-4">
+                      <div>
+                        <div class="mb-2 flex items-center justify-between text-sm text-slate-300">
+                          <span>Alt pop</span>
+                          <span>86%</span>
+                        </div>
+                        <div class="bar-shell"><span style="width: 86%"></span></div>
+                      </div>
+                      <div>
+                        <div class="mb-2 flex items-center justify-between text-sm text-slate-300">
+                          <span>Nu disco</span>
+                          <span>74%</span>
+                        </div>
+                        <div class="bar-shell"><span class="bar-pink" style="width: 74%"></span></div>
+                      </div>
+                      <div>
+                        <div class="mb-2 flex items-center justify-between text-sm text-slate-300">
+                          <span>R&amp;B alternativo</span>
+                          <span>67%</span>
+                        </div>
+                        <div class="bar-shell"><span class="bar-violet" style="width: 67%"></span></div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="showcase-card showcase-card-compact rounded-[30px] p-6">
+                    <p class="text-sm uppercase tracking-[0.24em] text-slate-400">Artista em ascensão</p>
+                    <div class="mt-5 flex items-center gap-4">
+                      <div class="artist-avatar">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                      </div>
+                      <div>
+                        <p class="text-xl font-bold text-white">Lina Sol</p>
+                        <p class="text-sm text-slate-400">Synth soul • São Paulo</p>
+                      </div>
+                    </div>
+                    <p class="mt-5 leading-7 text-slate-300">
+                      Entrou em 12 mil playlists nas últimas 48 horas com crescimento consistente entre ouvintes premium.
+                    </p>
+
+                    <div class="showcase-artist-foot mt-6 rounded-[22px] p-4">
+                      <div class="flex items-center justify-between text-sm text-slate-300">
+                        <span>Salvamentos</span>
+                        <strong class="text-white">+38%</strong>
+                      </div>
+                      <div class="mt-3 flex items-center justify-between text-sm text-slate-300">
+                        <span>Compartilhamentos</span>
+                        <strong class="text-white">7.2k</strong>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="depoimentos" class="py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+            <div class="testimonial-intro-panel reveal-up rounded-[34px] p-8 sm:p-10">
+              <p class="section-eyebrow">Depoimentos</p>
+              <h2 class="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Quem entra no Melodia percebe a diferença já nas primeiras sessões.
+              </h2>
+              <p class="mt-5 text-lg leading-8 text-slate-300">
+                A experiência combina som, descoberta e interface com um nível de refinamento que gera confiança e vontade de continuar ouvindo.
+              </p>
+
+              <div class="testimonial-summary mt-8 rounded-[28px] p-5">
+                <p class="text-sm uppercase tracking-[0.24em] text-cyan-200/80">Percepção dos usuários</p>
+                <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <p class="text-3xl font-bold text-white">4.9/5</p>
+                    <p class="mt-2 text-sm text-slate-300">Avaliação média entre ouvintes que testaram a versão premium.</p>
+                  </div>
+                  <div>
+                    <p class="text-3xl font-bold text-white">91%</p>
+                    <p class="mt-2 text-sm text-slate-300">Relatam mais descoberta musical logo na primeira semana.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-grid grid gap-6 lg:grid-cols-3">
+              <article class="testimonial-card premium-testimonial-card rounded-[30px] p-7">
+                <div class="testimonial-head">
+                  <span class="testimonial-badge">Creative</span>
+                  <div class="testimonial-stars" aria-label="5 estrelas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="testimonial-quote mt-6 leading-8 text-slate-200">
+                  “O Melodia parece um app de música de próxima geração. A curadoria realmente entende meu momento.”
+                </p>
+                <div class="testimonial-footer mt-8 flex items-center gap-4">
+                  <img
+                    class="testimonial-avatar h-14 w-14 rounded-2xl object-cover"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2306b6d4'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Ctext x='32' y='39' font-size='22' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3EL%3C/text%3E%3C/svg%3E"
+                    alt="Foto de Larissa Costa"
+                  >
+                  <div>
+                    <p class="text-lg font-bold text-white">Larissa Costa</p>
+                    <p class="text-sm text-slate-400">Diretora criativa</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="testimonial-card premium-testimonial-card rounded-[30px] p-7">
+                <div class="testimonial-head">
+                  <span class="testimonial-badge">Producer</span>
+                  <div class="testimonial-stars" aria-label="5 estrelas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="testimonial-quote mt-6 leading-8 text-slate-200">
+                  “A qualidade de áudio e a forma como novos artistas aparecem no feed me fizeram trocar de plataforma.”
+                </p>
+                <div class="testimonial-footer mt-8 flex items-center gap-4">
+                  <img
+                    class="testimonial-avatar h-14 w-14 rounded-2xl object-cover"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%23ec4899'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Ctext x='32' y='39' font-size='22' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3ER%3C/text%3E%3C/svg%3E"
+                    alt="Foto de Rafael Moura"
+                  >
+                  <div>
+                    <p class="text-lg font-bold text-white">Rafael Moura</p>
+                    <p class="text-sm text-slate-400">Produtor musical</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="testimonial-card premium-testimonial-card rounded-[30px] p-7">
+                <div class="testimonial-head">
+                  <span class="testimonial-badge">Product</span>
+                  <div class="testimonial-stars" aria-label="5 estrelas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="testimonial-quote mt-6 leading-8 text-slate-200">
+                  “É raro ver uma landing e um conceito de app tão bem resolvidos. Tudo comunica sofisticação sem exagero.”
+                </p>
+                <div class="testimonial-footer mt-8 flex items-center gap-4">
+                  <img
+                    class="testimonial-avatar h-14 w-14 rounded-2xl object-cover"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Ctext x='32' y='39' font-size='22' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E"
+                    alt="Foto de Ana Beatriz"
+                  >
+                  <div>
+                    <p class="text-lg font-bold text-white">Ana Beatriz</p>
+                    <p class="text-sm text-slate-400">Designer de produto</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="pb-20 pt-20 sm:pb-24 sm:pt-24">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div class="cta-panel overflow-hidden rounded-[36px] p-8 sm:p-10 lg:p-12">
+            <div class="mx-auto max-w-3xl text-center">
+              <p class="section-eyebrow reveal-up">Entre na lista</p>
+              <h2 class="reveal-up mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Receba acesso antecipado ao universo premium do Melodia.
+              </h2>
+              <p class="reveal-up mt-5 text-lg leading-8 text-slate-300">
+                Cadastre seu e-mail para liberar novidades, playlists exclusivas e convites para o beta.
+              </p>
+            </div>
+
+            <form id="lead-form" class="reveal-up mx-auto mt-10 max-w-2xl">
+              <div class="flex flex-col gap-4 rounded-[30px] border border-white/10 bg-white/5 p-4 shadow-[0_20px_60px_rgba(7,10,24,0.45)] backdrop-blur-xl sm:flex-row">
+                <label for="email" class="sr-only">Seu e-mail</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Seu melhor e-mail"
+                  class="h-14 flex-1 rounded-2xl border border-white/10 bg-slate-950/70 px-5 text-base text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
+                >
+                <button type="submit" class="glow-button inline-flex h-14 items-center justify-center gap-3 rounded-2xl px-7 text-base font-semibold text-white">
+                  Quero Acesso
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+              <p id="form-feedback" class="mt-4 min-h-6 text-sm font-medium text-cyan-200" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 pb-10 pt-8">
+      <div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="logo-mark flex h-11 w-11 items-center justify-center rounded-2xl">
+              <i class="fa-solid fa-wave-square text-base"></i>
+            </span>
+            <span class="font-display text-xl font-bold">Melodia</span>
+          </div>
+          <p class="mt-4 max-w-md text-sm leading-7 text-slate-400">
+            Uma nova forma de descobrir, sentir e viver música com qualidade premium e interface imersiva.
+          </p>
+        </div>
+
+        <div class="grid gap-8 text-sm text-slate-400 sm:grid-cols-3">
+          <div>
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-200">Contato</p>
+            <p class="mt-3">hello@melodia.app</p>
+            <p class="mt-2">+55 11 99999-2026</p>
+          </div>
+          <div>
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-200">Links úteis</p>
+            <a href="#beneficios" class="footer-link mt-3 block">Benefícios</a>
+            <a href="#showcase" class="footer-link mt-2 block">Experiência</a>
+            <a href="#contato" class="footer-link mt-2 block">Acesso antecipado</a>
+          </div>
+          <div>
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-200">Redes</p>
+            <div class="mt-3 flex items-center gap-3">
+              <a href="#" class="social-link" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="Spotify">
+                <i class="fa-brands fa-spotify"></i>
+              </a>
+            </div>
+            <a href="#" class="footer-link mt-4 block">Política de Privacidade</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-8 max-w-7xl px-4 text-sm text-slate-500 sm:px-6 lg:px-8">
+        © <span id="current-year">2026</span> Melodia. Todos os direitos reservados.
+      </div>
+    </footer>
+  </div>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="script.js"></script>
+</body>
+</html>
