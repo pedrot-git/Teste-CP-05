@@ -29,6 +29,7 @@ body {
     linear-gradient(180deg, #040611 0%, #070b1c 45%, #050816 100%);
   color: #f8fafc;
   font-family: "Manrope", sans-serif;
+  line-height: 1.5;
   overflow-x: hidden;
 }
 
@@ -545,6 +546,18 @@ img {
   opacity: 0.75;
 }
 
+.glow-button::after {
+  content: "";
+  position: absolute;
+  inset: -120% auto auto -25%;
+  width: 42%;
+  height: 280%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transform: rotate(18deg) translateX(-1.5rem);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
 .glow-button:hover {
   transform: translateY(-2px);
   filter: saturate(1.08);
@@ -553,7 +566,19 @@ img {
     inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
+.glow-button:hover::after {
+  opacity: 1;
+  transform: rotate(18deg) translateX(10rem);
+}
+
 .secondary-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(236, 72, 153, 0.05)),
+    rgba(255, 255, 255, 0.04);
+  box-shadow:
+    0 14px 32px rgba(5, 8, 22, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   color: white;
   transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
@@ -561,7 +586,9 @@ img {
 .secondary-button:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(236, 72, 153, 0.08)),
+    rgba(255, 255, 255, 0.08);
 }
 
 .gradient-text {
@@ -989,10 +1016,84 @@ img {
 
 .section-eyebrow {
   color: rgba(125, 211, 252, 0.9);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.26em;
   text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+  content: "";
+  width: 2.2rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0), rgba(34, 211, 238, 0.95));
+}
+
+#beneficios,
+#funcionalidades,
+#showcase,
+#depoimentos,
+#contato {
+  position: relative;
+}
+
+#beneficios::before,
+#funcionalidades::before,
+#showcase::before,
+#depoimentos::before,
+#contato::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 50%;
+  width: min(72vw, 52rem);
+  height: 22rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+#beneficios::before {
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.35), rgba(34, 211, 238, 0) 70%);
+}
+
+#funcionalidades::before {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0) 70%);
+}
+
+#showcase::before {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3), rgba(168, 85, 247, 0) 70%);
+}
+
+#depoimentos::before {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.28), rgba(236, 72, 153, 0) 70%);
+}
+
+#contato::before {
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.24), rgba(34, 211, 238, 0) 70%);
+}
+
+#beneficios h2,
+#funcionalidades h2,
+#showcase h2,
+#depoimentos h2,
+#contato h2 {
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+#beneficios > div,
+#funcionalidades > div,
+#showcase > div,
+#depoimentos > div,
+#contato > div {
+  position: relative;
+  z-index: 1;
 }
 
 .benefit-intro-panel {
@@ -1068,6 +1169,40 @@ img {
 .showcase-card,
 .cta-panel {
   position: relative;
+}
+
+.surface-panel,
+.product-card,
+.showcase-card,
+.footer-card,
+.contact-metric,
+.showcase-player-shell,
+.showcase-focus-card,
+.showcase-metric-card,
+.benefit-intro-panel,
+.testimonial-intro-panel,
+.lead-form-shell {
+  overflow: hidden;
+}
+
+.surface-panel::before,
+.product-card::before,
+.showcase-card::before,
+.footer-card::before,
+.contact-metric::before,
+.showcase-player-shell::before,
+.showcase-focus-card::before,
+.showcase-metric-card::before,
+.benefit-intro-panel::before,
+.testimonial-intro-panel::before,
+.lead-form-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 7rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0));
+  opacity: 0.75;
+  pointer-events: none;
 }
 
 .feature-card,
@@ -1289,6 +1424,16 @@ img {
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+.surface-panel:hover,
+.product-card:hover,
+.footer-card:hover,
+.contact-metric:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 26px 70px rgba(5, 8, 22, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
 .feature-icon,
 .artist-avatar {
   width: 4rem;
@@ -1310,6 +1455,14 @@ img {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
     0 16px 34px rgba(34, 211, 238, 0.12);
+}
+
+.product-card:hover .feature-icon,
+.showcase-card:hover .artist-avatar {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 16px 36px rgba(168, 85, 247, 0.14);
 }
 
 .equalizer-card {
@@ -1725,6 +1878,17 @@ img {
 
 .lead-feedback {
   transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pill-badge,
+.showcase-score,
+.benefit-tag,
+.testimonial-badge,
+.lead-trust-pill,
+.footer-bottom-pill,
+.brand-badge {
+  backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .reveal-up,
